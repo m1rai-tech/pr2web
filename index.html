@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заявка на участь</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="form-card">
+    <header class="form-heading">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><rect x="1" y="1" width="26" height="26" rx="6" stroke="currentColor"/><path d="m10 10-4 4 4 4m8-8 4 4-4 4m-3-9-2 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h1>Заявка на участь</h1>
+    </header>
+    <form id="registration" action="#" method="get">
+      <div class="form-row">
+        <div class="field">
+          <label for="full-name">Ім’я та прізвище *</label>
+          <input id="full-name" name="fullName" type="text" autocomplete="name" required minlength="3" maxlength="80">
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" autocomplete="email" required maxlength="120">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="position">Посада *</label>
+          <input id="position" name="position" type="text" placeholder="Студент" required minlength="2" maxlength="80" autocomplete="organization-title">
+        </div>
+        <div class="field">
+          <label for="phone">Телефон</label>
+          <input id="phone" name="phone" type="tel" placeholder="+380671234567" autocomplete="tel" pattern="[+]380[0-9]{9}" title="Формат: +380 та 9 цифр, без пробілів">
+        </div>
+      </div>
+      <div class="field">
+        <label for="track">Секція конференції *</label>
+        <select id="track" name="track" required>
+          <option value="" disabled selected>Оберіть секцію</option>
+          <option value="frontend">Frontend</option>
+          <option value="design">UI/UX дизайн</option>
+          <option value="ai">Штучний інтелект</option>
+          <option value="backend">Backend</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="attachment">Аватар або резюме</label>
+        <input id="attachment" name="attachment" type="file" accept="image/png,image/jpeg,application/pdf" aria-describedby="file-help file-status">
+        <small id="file-help">PNG, JPG або PDF, до 5 МБ</small>
+        <p id="file-status" class="file-status" aria-live="polite"></p>
+        <figure id="preview-figure" hidden>
+          <img id="avatar-preview" src="assets/conference.svg" alt="Попередній перегляд аватара" width="72" height="72" hidden>
+          <figcaption>Аватар</figcaption>
+        </figure>
+      </div>
+      <div class="consent">
+        <input id="consent" name="consent" type="checkbox" required>
+        <label for="consent">Погоджуюся з правилами участі *</label>
+      </div>
+      <div class="actions">
+        <button class="primary" type="submit">Подати заявку</button>
+        <button class="secondary" type="reset">Очистити</button>
+      </div>
+      <p id="result" role="status" tabindex="-1" hidden></p>
+    </form>
+  </main>
+</body>
+</html>
